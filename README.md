@@ -92,15 +92,17 @@ and put the Widget Code into your login website
     <div id="root" style="width: 400px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px;">
         embeded area
     </div>
-    <script src="https://cdn.auth0.com/w2/auth0-widget-2.4.6.min.js"></script>
-    <script>
-        var widget = new Auth0Widget({
-            domain:         'YOUR_DOMAIN',
-            clientID:       'YOUR-CLIENTID',
-            callbackURL:    'http://localhost:3579/login-callback'
-            });
-            
-        widget.signin({ container: 'root', chrome: true });
+    <script src="https://cdn.auth0.com/js/lock-7.11.js"></script>
+    <script>	
+    var widget = new Auth0Lock('YOUR-CLIENTID','YOUR_DOMAIN'); 
+    
+    lock.show({
+        container: 'root', 
+        callbackURL: 'http://localhost:3579/login-callback',
+        responseType: 'code',
+        authParams: {
+            scope: 'openid profile'
+        }});
     </script>
     
 
