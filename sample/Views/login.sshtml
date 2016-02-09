@@ -28,7 +28,7 @@
     callbackURL: 'http://localhost:3579/login-callback',
     responseType: 'code',
     authParams: {
-        scope: 'openid profile'
+        scope: 'openid name'
     }});
 </script>
 
