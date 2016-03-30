@@ -1,5 +1,6 @@
 ﻿using Auth0.Nancy.SelfHost;
 using Nancy;
+using System.Configuration;
 
 namespace auth0_nancyfx_sample
 {
@@ -13,7 +14,7 @@ namespace auth0_nancyfx_sample
                 if (this.SessionIsAuthenticated())
                     return Response.AsRedirect("securepage");
 
-                return View["login"];
+                return View["login", new { client_id = ConfigurationManager.AppSettings["auth0:ClientId"], domain = ConfigurationManager.AppSettings["auth0:domain"] }];
             };
 
             Get["/login-callback"] = o => this
