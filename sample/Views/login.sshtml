@@ -19,7 +19,7 @@
 <div id="root" style="width: 400px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px;">
     embeded area
 </div>
-<script src="http://cdn.auth0.com/js/lock/10.0.0-rc.2/lock.min.js"></script>
+<script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
 <script>
   var lock = new Auth0Lock('@Model.client_id','@Model.domain', {
   container: 'root',
