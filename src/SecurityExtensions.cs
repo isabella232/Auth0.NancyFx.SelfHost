@@ -15,7 +15,7 @@ namespace Auth0.Nancy.SelfHost
                 Name = identity.UserName,
                 Nickname = identity.Claims.Get("nickname"),
                 GravatarUrl = identity.Claims.Get("picture"),
-                Email = identity.Claims.Get("email"),
+                Email = identity.Claims.Get("email")
             };
         }
 

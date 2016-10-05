@@ -39,5 +39,7 @@ namespace Auth0.Nancy.SelfHost
         }
 
         public string AccessToken { get; set; }
+        public dynamic UserMetadata { get; set; }
+        public dynamic AppMetadata { get; set; }
     }
 }
