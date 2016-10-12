@@ -15,21 +15,21 @@
 
 </head>
 <body>
-<p>Login Page</p>
-<div id="root" style="width: 400px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px;">
-    embeded area
+<h2>Login Page</h2>
+<div id="root" style="width: 300px; margin: 0px auto; margin-top: 50px">
 </div>
-<script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
+<script src="https://cdn.auth0.com/js/lock/10.4/lock.min.js"></script>
 <script>
   var lock = new Auth0Lock('@Model.client_id','@Model.domain', {
-  container: 'root',
-  auth: {    
-    redirectUrl: 'http://localhost:3579/login-callback',
-    responseType: 'code',
-    params: {
-        scope: 'openid name'
+    container: 'root',
+    auth: {
+		redirectUrl: 'http://localhost:3579/login-callback',
+		responseType: 'code',
+		params: {
+			scope: 'openid name'
+		}
     }
-  }});
+  });
 
   lock.show();
 </script>
