@@ -47,28 +47,12 @@
       <HintPath>..\packages\Auth0.Core.3.4.0\lib\net45\Auth0.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Auth0.ManagementApi, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Auth0.ManagementApi.3.4.0\lib\net45\Auth0.ManagementApi.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Auth0.Nancy.SelfHost, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\src\bin\Debug\Auth0.Nancy.SelfHost.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Nancy.Hosting.Self, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.Hosting.Self.1.4.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -100,7 +84,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\src\Auth0.Nancy.SelfHost.csproj">
+      <Project>{2b3c4ebc-258b-4f5c-bd4b-b6c2549e3f35}</Project>
+      <Name>Auth0.Nancy.SelfHost</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Content\nancy-logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
