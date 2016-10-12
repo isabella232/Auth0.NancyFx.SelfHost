@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Auth0.NancyFx.SelfHost</id>
+    <version>1.0.0</version>
+    <authors>Jerrie Pelser, Jan Fellien</authors>
+    <owners>Auth0</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/auth0/Auth0.NancyFx.SelfHost</projectUrl>
+    <iconUrl>http://secure.gravatar.com/avatar/805765c256ff8617fcad483b5476faf2</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Auth0 Provider for NancyFx self hosted Applications</description>
+    <summary />
+    <releaseNotes>
+      - Version 1.0.0
+        First official release managed by Auth0. Thanks to Jan Fellien for driving this project up until this point. This official release depracates the previous
+        dependencies on the old Auth0 NuGet package and instead takes a dependency on the new Auth0.AuthenticationApi package
+    </releaseNotes>
+    <tags>Auth0 NancyFx Authentication SelfHost</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Nancy" version="1.4.3" />
+        <dependency id="Auth0.AuthenticationApi" version="3.4.1" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\bin\Release\Auth0.Nancy.SelfHost.dll" target="lib\net45\Auth0.Nancy.SelfHost.dll" />
+  </files>
+</package>
