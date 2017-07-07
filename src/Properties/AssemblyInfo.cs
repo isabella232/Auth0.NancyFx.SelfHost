@@ -7,8 +7,8 @@ using System.Runtime.InteropServices;
 [assembly: GuidAttribute("c3568aca-b0f7-4804-a762-352d4272599c")]
 [assembly: AssemblyProductAttribute("Auth0.NancyFx.SelfHost")]
 [assembly: AssemblyTrademarkAttribute("Copyright ©  devCrowd 2014")]
-[assembly: AssemblyVersionAttribute("0.2.1")]
-[assembly: AssemblyFileVersionAttribute("0.2.1")]
+[assembly: AssemblyVersion("2.0.0")]
+[assembly: AssemblyFileVersion("2.0.0")]
 namespace System {
     internal static class AssemblyVersionInformation {
         internal const string Version = "0.2.1";
