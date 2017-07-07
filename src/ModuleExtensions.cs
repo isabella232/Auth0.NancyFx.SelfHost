@@ -20,12 +20,12 @@ namespace Auth0.Nancy.SelfHost
         {
             var code = (string) module.Request.Query["code"];
 
-            var token = Auth0Client.ExchangeCodeForAccessTokenAsync(new ExchangeCodeRequest
+            var token = Auth0Client.GetTokenAsync(new AuthorizationCodeTokenRequest
             {
                 ClientId = ConfigurationManager.AppSettings["auth0:ClientId"],
                 ClientSecret = ConfigurationManager.AppSettings["auth0:ClientSecret"],
                 RedirectUri = ConfigurationManager.AppSettings["auth0:CallbackUrl"],
-                AuthorizationCode = code
+                Code = code
  
              }).ConfigureAwait(false).GetAwaiter().GetResult();
 
@@ -39,9 +39,7 @@ namespace Auth0.Nancy.SelfHost
                 Name = userInfo.FullName,
                 Nickname = userInfo.NickName,
                 GravatarUrl = userInfo.Picture,
-                Email = userInfo.Email,
-                UserMetadata = userInfo.UserMetadata,
-                AppMetadata = userInfo.AppMetadata
+                Email = userInfo.Email
             };
 
             Auth0Authentication.CreateAuthenticationSessionFor(user, module.Context.Request.Session);
