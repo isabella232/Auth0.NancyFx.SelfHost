@@ -81,9 +81,6 @@
     <None Include="Views\index.sshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Views\login.sshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Views\securepage.sshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

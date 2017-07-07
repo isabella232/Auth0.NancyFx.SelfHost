@@ -1,6 +1,8 @@
 ﻿using Auth0.Nancy.SelfHost;
 using Nancy;
 using System.Configuration;
+using Auth0.AuthenticationApi;
+using Auth0.AuthenticationApi.Models;
 
 namespace auth0_nancyfx_sample
 {
@@ -14,7 +16,15 @@ namespace auth0_nancyfx_sample
                 if (this.SessionIsAuthenticated())
                     return Response.AsRedirect("securepage");
 
-                return View["login", new { client_id = ConfigurationManager.AppSettings["auth0:ClientId"], domain = ConfigurationManager.AppSettings["auth0:domain"] }];
+                var apiClient = new AuthenticationApiClient(ConfigurationManager.AppSettings["auth0:domain"]);
+                var authorizationUri = apiClient.BuildAuthorizationUrl()
+                    .WithClient(ConfigurationManager.AppSettings["auth0:ClientId"])
+                    .WithRedirectUrl(ConfigurationManager.AppSettings["auth0:CallbackUrl"])
+                    .WithResponseType(AuthorizationResponseType.Code)
+                    .WithScope("openid profile")
+                    .Build();
+
+                return Response.AsRedirect(authorizationUri.ToString());
             };
 
             Get["/login-callback"] = o => this
